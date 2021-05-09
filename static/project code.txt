@@ -1,0 +1,17 @@
+layout Code:-
+<a href="{{ url_for('user') }}"><i class="fas fa-sign-out-alt"></i>User</a> -->
+
+main Code:-
+"""
+# http://localhost:5000/pythinlogin/user - this will be the user page, only accessible for loggedin users
+@app.route('/pythonlogin/user')
+def home():
+    # Check if user is loggedin
+    if 'loggedin' in session:
+        # User is loggedin show them the user page
+        return render_template('user.html', username=session['username'])
+    # User is not loggedin redirect to login page
+    return redirect(url_for('login'))
+"""
+
+
